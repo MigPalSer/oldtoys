@@ -10,6 +10,7 @@ import java.util.Scanner;
  *game and by a final display which give option to play a new game without end
  *the program.  
 */
+
 public class NoughtsAndCrosses {
 	static Scanner miscan;
 
@@ -21,6 +22,15 @@ public class NoughtsAndCrosses {
 
 		boolean ganador = false;
 
+		
+		/*CONFIGURATION:
+		 *In my first steps as programmer I usually configure the program
+		 *options directly in the code.
+		 *This configuration, with turnoa and turnoia, assign the x to the human
+		 *player and the o to an ia player. If we want to assign the x to an ia, we can
+		 *comment turnoa and uncomment turnoia2. Also, if we want to assign the o to an human
+		 *player we can uncomment turnob and comment turnoia. 
+		 * */
 		while (ganador == false) {
 			turnoa(tablero);
 			// turnoia2(tablero);
@@ -56,6 +66,9 @@ public class NoughtsAndCrosses {
 		tab[f][c] = 'o';
 	}
 
+	//Method to manage the human turn of x
+	//It announces the turn in the console and ask the human for an input.
+	//Then, it check if the input is valid with the tabletop
 	public static void turnoa(char tab[][]) {
 		System.out.println("Turno del jugador A (x)");
 		boolean casillacorrecta = false;
@@ -286,6 +299,7 @@ public class NoughtsAndCrosses {
 		return ganador;
 	}
 
+	//AI manage method
 	public static void turnoia(char tab[][]) {
 		boolean eligiendo = true;
 		int f = -1;
@@ -330,6 +344,7 @@ public class NoughtsAndCrosses {
 		imprimetablero(tab);
 	}
 
+	//Second AI method
 	public static void turnoia2(char tab[][]) {
 		boolean eligiendo = true;
 		int f = -1;
